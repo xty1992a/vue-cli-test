@@ -1,0 +1,15 @@
+@{
+ViewBag.Title = <%= htmlWebpackPlugin.options.title %>;
+ViewBag.MenuId = <%= htmlWebpackPlugin.options.menuId %>;
+Layout = "~/Views/Shared/_LayoutVue.cshtml";
+}
+
+@section PageScripts{
+<% for (var i = 0; i < htmlWebpackPlugin.files.css.length; i++) {%>
+<link rel="stylesheet" href="~/test<%= htmlWebpackPlugin.files.css[i] %>">
+<% } %>
+<% for (var i = 0; i < htmlWebpackPlugin.files.js.length; i++) {%>
+<script type="text/javascript" src="~/test<%= htmlWebpackPlugin.files.js[i] %>"></script>
+<% } %>
+}
+
